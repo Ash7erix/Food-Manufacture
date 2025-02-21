@@ -7,7 +7,6 @@ import webbrowser
 import requests
 import re
 
-
 #**********************************************#
 # Data Handling
 #**********************************************#
