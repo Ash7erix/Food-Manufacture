@@ -3,6 +3,9 @@ from gurobipy import Model, GRB
 import matplotlib.pyplot as plt
 import pandas as pd
 import json
+import webbrowser
+import requests
+import re
 
 
 #**********************************************#
@@ -96,6 +99,41 @@ st.markdown("""
     <p style="margin-left:20px;">  'Model Building in Mathematical Programming, Fifth Edition' by H. Paul Williams</p>
     </div>    
 """, unsafe_allow_html=True)
+
+st.markdown("""
+    <style>
+        .container-c1 p {
+            font-size: 20px;
+        }
+    </style>
+    <div class="container-c1">
+        <br><p> For a detailed view of the mathematical formulation, please visit my GitHub page.
+    </div>
+""", unsafe_allow_html=True)
+
+if st.button('Visit my GitHub'):
+    webbrowser.open('https://github.com/Ash7erix/Model_Building_Assignments/tree/main/12.1_Food_Manufacture')
+
+
+# def fetch_readme(repo_url):
+#     raw_url = f"{repo_url}/raw/main/12.1_Food_Manufacture/README.md"  # Adjust path if necessary
+#     response = requests.get(raw_url)
+#     return response.text
+#
+#
+# # GitHub repository URL
+# repo_url = "https://github.com/Ash7erix/Model_Building_Assignments"
+
+## Fetch the README content
+# try:
+#     readme_content = fetch_readme(repo_url)
+#     st.markdown(readme_content)
+#
+# except Exception as e:
+#     st.error(f"Could not fetch README: {e}")
+#
+# st.markdown("""---""")
+
 st.markdown("""
     <style>
         .container-c1 p {
