@@ -104,34 +104,31 @@ st.markdown("""
         .container-c1 p {
             font-size: 20px;
         }
+        .button {
+            background-color: #FFFFFF;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #FFFFFF;
+             box-shadow: 1px 1px 4px rgb(255, 75, 75); /* Shadow effect on hover */
+        }
     </style>
     <div class="container-c1">
-        <br><p> For a detailed view of the mathematical formulation, please visit my GitHub page.
+        <br><p> For a detailed view of the mathematical formulation, please visit my 
+        <a href="https://github.com/Ash7erix/Model_Building_Assignments/tree/main/12.1_Food_Manufacture">Github</a> page.</p>
+        
     </div>
 """, unsafe_allow_html=True)
 
-if st.button('Visit my GitHub'):
-    webbrowser.open('https://github.com/Ash7erix/Model_Building_Assignments/tree/main/12.1_Food_Manufacture')
-
-
-def fetch_readme(repo_url):
-    raw_url = f"{repo_url}/raw/main/12.1_Food_Manufacture/README.md"  # Adjust path if necessary
-    response = requests.get(raw_url)
-    return response.text
-
-
-# GitHub repository URL
-repo_url = "https://github.com/Ash7erix/Model_Building_Assignments"
-
-# Fetch the README content
-try:
-    readme_content = fetch_readme(repo_url)
-    st.markdown(readme_content)
-
-except Exception as e:
-    st.error(f"Could not fetch README: {e}")
-
-st.markdown("""---""")
 
 st.markdown("""
     <style>
@@ -157,6 +154,28 @@ st.markdown("""
 #**********************************************#
 prices_df = pd.DataFrame(cost, index=["VEG1", "VEG2", "OIL1", "OIL2", "OIL3"]).T
 st.title("Optimization Data and Constraints:")
+st.markdown("""
+    <style>
+        .container-c1 p {
+            font-size: 20px;
+        }
+    </style>
+    <div class="container-c1">
+        <br><p> You can view the mathematical formulation below by clicking the button.</p>
+    </div>
+""", unsafe_allow_html=True)
+
+if st.button('Display Formulation'):
+    def fetch_readme(repo_url):
+        raw_url = f"{repo_url}/raw/main/12.1_Food_Manufacture/README.md"  # Adjust path if necessary
+        response = requests.get(raw_url)
+        return response.text
+    repo_url = "https://github.com/Ash7erix/Model_Building_Assignments"
+    try:
+        readme_content = fetch_readme(repo_url)
+        st.markdown(readme_content)
+    except Exception as e:
+        st.error(f"Could not fetch README: {e}")
 
 col1, col2, col3, col4 = st.columns(4)
 with col1:
