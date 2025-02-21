@@ -115,7 +115,7 @@ if st.button('Visit my GitHub'):
 
 
 def fetch_readme(repo_url):
-raw_url = f"{repo_url}/raw/main/12.1_Food_Manufacture/README.md"  # Adjust path if necessary
+    raw_url = f"{repo_url}/raw/main/12.1_Food_Manufacture/README.md"  # Adjust path if necessary
     response = requests.get(raw_url)
     return response.text
 
