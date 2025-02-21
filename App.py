@@ -114,24 +114,24 @@ if st.button('Visit my GitHub'):
     webbrowser.open('https://github.com/Ash7erix/Model_Building_Assignments/tree/main/12.1_Food_Manufacture')
 
 
-# def fetch_readme(repo_url):
-#     raw_url = f"{repo_url}/raw/main/12.1_Food_Manufacture/README.md"  # Adjust path if necessary
-#     response = requests.get(raw_url)
-#     return response.text
-#
-#
-# # GitHub repository URL
-# repo_url = "https://github.com/Ash7erix/Model_Building_Assignments"
+def fetch_readme(repo_url):
+raw_url = f"{repo_url}/raw/main/12.1_Food_Manufacture/README.md"  # Adjust path if necessary
+    response = requests.get(raw_url)
+    return response.text
 
-## Fetch the README content
-# try:
-#     readme_content = fetch_readme(repo_url)
-#     st.markdown(readme_content)
-#
-# except Exception as e:
-#     st.error(f"Could not fetch README: {e}")
-#
-# st.markdown("""---""")
+
+# GitHub repository URL
+repo_url = "https://github.com/Ash7erix/Model_Building_Assignments"
+
+# Fetch the README content
+try:
+    readme_content = fetch_readme(repo_url)
+    st.markdown(readme_content)
+
+except Exception as e:
+    st.error(f"Could not fetch README: {e}")
+
+st.markdown("""---""")
 
 st.markdown("""
     <style>
