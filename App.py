@@ -145,15 +145,6 @@ st.markdown("""
         refining, storage, and production data for each month.</p>
     </div>
 """, unsafe_allow_html=True)
-
-
-
-
-#**********************************************#
-# Convert the prices dictionary into a DataFrame for display
-#**********************************************#
-prices_df = pd.DataFrame(cost, index=["VEG1", "VEG2", "OIL1", "OIL2", "OIL3"]).T
-st.title("Optimization Data and Constraints:")
 st.markdown("""
     <style>
         .container-c1 p {
@@ -177,6 +168,11 @@ if st.button('Display Formulation'):
     except Exception as e:
         st.error(f"Could not fetch README: {e}")
 
+#**********************************************#
+# Convert the prices dictionary into a DataFrame for display
+#**********************************************#
+prices_df = pd.DataFrame(cost, index=["VEG1", "VEG2", "OIL1", "OIL2", "OIL3"]).T
+st.title("Optimization Data and Constraints:")
 col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.subheader("Monthly Oil Prices (£)")
